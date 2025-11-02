@@ -10,14 +10,14 @@ typedef struct {
     char grade; 
 }
 Student; // structure 
-void *calculate_grade(void *arg) //data converting void student .
+void *calculate_grade(void *arg) //data converting void to student .
 {
     Student *s = (Student *)arg; 
-    if (s->marks >= 85) s->grade = 'A';
-    else if (s->marks >= 70) s->grade = 'B';
-    else if (s->marks >= 60) s->grade = 'C';
-    else if (s->marks >= 50) s->grade = 'D';
-    else s->grade = 'F';
+    if (s->marks == 85) s->grade = 'A';
+    else if (s->marks == 70) s->grade = 'B';
+    else if (s->marks == 60) s->grade = 'C';
+    else if (s->marks == 50) s->grade = 'D';
+    else s->grade == 'F';
     printf("\nStudent:\n");
     printf("id: %d\n", s->student_id);
     printf("Name : %s\n", s->name);
@@ -29,7 +29,7 @@ void *calculate_grade(void *arg) //data converting void student .
 int main() { 
     pthread_t threads [3]; // thread array
     Student students[3] = {
-        {1146,"Eman",89,'-'},
+        {1146,"Eman",85,'-'},
      {1142,"nimra",70,'-'},
       {1201,"ayema",40,'-'},
     };
